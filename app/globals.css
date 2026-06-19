@@ -20,8 +20,9 @@
   --radius: 16px;
   --radius-sm: 10px;
   --shadow-soft: 0 2px 12px rgba(45, 42, 38, 0.06);
-  --shadow-card: 0 4px 24px rgba(45, 42, 38, 0.08);
-  --shadow-elevated: 0 8px 40px rgba(45, 42, 38, 0.12);
+  --shadow-card: 0 2px 8px rgba(45, 42, 38, 0.06), 0 4px 24px rgba(45, 42, 38, 0.08);
+  --shadow-elevated: 0 4px 16px rgba(45, 42, 38, 0.08), 0 8px 40px rgba(45, 42, 38, 0.12);
+  --shadow-hover: 0 8px 16px rgba(45, 42, 38, 0.08), 0 24px 56px rgba(45, 42, 38, 0.14);
 }
 
 @theme inline {
@@ -59,4 +60,17 @@ body {
 
 .animate-pulse-ring {
   animation: pulse-ring 1.5s ease-in-out infinite;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease-out;
+}
+
+.glass-card:hover {
+  box-shadow: var(--shadow-hover);
 }
